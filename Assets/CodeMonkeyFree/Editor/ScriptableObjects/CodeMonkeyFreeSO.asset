@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d777d270cee3a5c419cb21a828556f1a, type: 3}
+  m_Name: CodeMonkeyFreeSO
+  m_EditorClassIdentifier: 
+  currentVersion: 1.01
+  subtype: kitchenchaos
+  lastShownTimestamp: 1773974160
+  lastUpdateResponse:
+    version: 1.01
+    versionUrl: https://unitycodemonkey.com
+  checkedLastUpdateTimestamp: 1773974160
+  lastQOTDResponse:
+    questionId: 283
+    questionText: 'Is there a problem with this code?
+
+      <p>private void SetCameraFollowFunc(Func&lt;Vector3&gt;
+      cameraFollowFunc) { }</p>
+
+      <p>SetCameraFollowFunc(() =&gt; new Vector3(1,
+      0, 0));</p>'
+    answerA: No
+    answerB: 'Should be: SetCameraFollowFunc(() =&#62; return new Vector3(1, 0, 0));'
+    answerC: 'Should be: SetCameraFollowFunc((Vector3(1, 0, 0)) =&#62; { });'
+    answerD: 
+    answerE: 
+  lastQotdTimestamp: 1773974160
+  lastDynamicHeaderResponse:
+    topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/humbleBundleMar26Synty.png
+    topText: Synty Bundle! Awesome Low Poly Sci-Fi Assets and Anims!
+    topLink: humblebundle
+    bottomText: My 10+ Years of C# Knowledge in 1 Course!
+    bottomLink: csharpcourse
+  lastDynamicHeaderTimestamp: 1773974160
+  websiteLatestMessage:
+    text: <a href="https://cmonkey.co/freecourses">Check out all my FREE courses!
+      Click here!</a>
+  websiteLatestMessageTimestamp: 1773974160
+  websiteLatestVideos:
+    videos:
+    - youTubeId: Ni85VfUCw6E
+      title: The STATE of VR in 2026!
+    - youTubeId: xvGRjPssGnw
+      title: Do NOT make this MISTAKE with your Games!
+    - youTubeId: a4JpMP-pM6k
+      title: TOP 10 NEW Games, Made with Unity! (FEBRUARY 2026)
+    - youTubeId: 5VcshVc1a_k
+      title: How To Make Diegetic 3D UI In Unity (EASY!)
+  websiteLatestVideosTimestamp: 1773974160
