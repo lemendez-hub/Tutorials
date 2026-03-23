@@ -109,6 +109,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""InteractAlt"",
+                    ""type"": ""Button"",
+                    ""id"": ""8ea02aea-7d5b-470c-977d-ca9c31f63426"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -243,6 +252,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""30e3ba5b-1e79-493c-9018-f4c66cacdbeb"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InteractAlt"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -253,6 +273,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_InteractAlt = m_Player.FindAction("InteractAlt", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -335,6 +356,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_InteractAlt;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -354,6 +376,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Interact".
         /// </summary>
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/InteractAlt".
+        /// </summary>
+        public InputAction @InteractAlt => m_Wrapper.m_Player_InteractAlt;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -386,6 +412,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @InteractAlt.started += instance.OnInteractAlt;
+            @InteractAlt.performed += instance.OnInteractAlt;
+            @InteractAlt.canceled += instance.OnInteractAlt;
         }
 
         /// <summary>
@@ -403,6 +432,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @InteractAlt.started -= instance.OnInteractAlt;
+            @InteractAlt.performed -= instance.OnInteractAlt;
+            @InteractAlt.canceled -= instance.OnInteractAlt;
         }
 
         /// <summary>
@@ -457,5 +489,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInteract(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "InteractAlt" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInteractAlt(InputAction.CallbackContext context);
     }
 }
